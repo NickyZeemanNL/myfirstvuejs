@@ -1,0 +1,13 @@
+#Generic
+/packages
+App_Data
+bin
+obj
+.vs
+*.user
+package-lock.json
+
+#Project specific
+/node_modules
+/Src/Supershortlease.Web/assets/css
+/Src/Supershortlease.Web/assets/dist

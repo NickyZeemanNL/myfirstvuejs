@@ -1,0 +1,30 @@
+{
+  "version": "1.0.0",
+  "name": "MyFirstVue",
+  "private": true,
+  "vendorDependencies": {
+    "arlanet-cookie-notice": "arlanet",
+    "arlanet-youtube": "arlanet",
+    "core": "arlanet",
+    "fontawesome": "5.7.2",
+    "lity": "3.0.0-dev"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "del": "3.0.0",
+    "gulp": "4.0.0",
+    "gulp-autoprefixer": "6.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-clean-css": "3.10.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-minify": "^3.1.0",
+    "gulp-notify": "3.2.0",
+    "gulp-plumber": "1.2.0",
+    "gulp-sass": "4.0.2",
+    "gulp-sourcemaps": "2.6.4"
+  },
+  "dependencies": {
+    "vue": "^2.6.10"
+  }
+}
