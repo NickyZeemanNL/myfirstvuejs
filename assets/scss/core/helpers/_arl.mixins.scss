@@ -1,0 +1,201 @@
+﻿/// Font size
+/// Example:
+/// @include font-size(16px);
+/// @include font-size($font-size-base);
+/// Output:
+/// font-size: 16px;
+/// font-size: 1.6rem;
+@mixin font-size($size: 1.6) {
+    font-size: #{strip-unit($size * 1)}px;
+    font-size: #{strip-unit($size / 10)}rem;
+}
+
+/// Line height
+/// Example:
+/// @include line-height(16px);
+/// @include line-height($base-line-height);
+/// Output:
+/// line-height: 16px;
+/// line-height: 1.6rem
+@mixin line-height($size: 1.6) {
+    line-height: #{strip-unit($size * 1)}px;
+    line-height: #{strip-unit($size / 10)}rem;
+}
+
+/// Fluid type
+@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+    $u1: unit($min-vw);
+    $u2: unit($max-vw);
+    $u3: unit($min-font-size);
+    $u4: unit($max-font-size);
+
+    @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+        & {
+            font-size: $min-font-size;
+
+            @media screen and (min-width: $min-vw) {
+                font-size: calc( #{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}) );
+            }
+
+            @media screen and (min-width: $max-vw) {
+                font-size: $max-font-size;
+            }
+        }
+    }
+}
+
+
+/// Placeholder
+/// example:
+/// @include placeholder-color($color)
+@mixin placeholder-color($color) {
+    &::-webkit-input-placeholder {
+        color: $color;
+        opacity: 1;
+    }
+
+    &:-moz-placeholder {
+        color: $color;
+        opacity: 1;
+    }
+
+    &::-moz-placeholder {
+        color: $color;
+        opacity: 1;
+    }
+
+    &:-ms-input-placeholder {
+        color: $color;
+        opacity: 1;
+    }
+}
+
+/// Center content horzontal, vertical, both
+/// Examples:    
+/// @include centre(y);
+/// @include centre(x);
+/// @include centre();
+@mixin centre($axis: "both", $top: 50%, $left: 50%) {
+    position: absolute;
+
+    @if $axis == "y" {
+        top: $top;
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+
+    @if $axis == "x" {
+        left: $left;
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        -o-transform: translateX(-50%);
+        transform: translateX(-50%);
+    }
+
+    @if $axis == "both" {
+        top: $top;
+        left: $left;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+}
+
+/// Gradient mixin with direction
+/// Convert angle
+/// @author Chris Eppstein
+/// @param {Number} $value - Value to convert
+/// @param {String} $unit - Unit to convert to
+/// @return {Number} Converted angle
+/// Example: @include linear-gradient(to top, rgba($black, 1) 50%, rgba($black, 0) 100%);
+@function convert-angle($value, $unit) {
+    $convertable-units: deg grad turn rad;
+    $conversion-factors: 1 (10grad/9deg) (1turn/360deg) (3.1415926rad/180deg);
+
+    @if index($convertable-units, unit($value)) and index($convertable-units, $unit) {
+        @return $value / nth($conversion-factors, index($convertable-units, unit($value))) * nth($conversion-factors, index($convertable-units, $unit));
+    }
+
+    @warn "Cannot convert `#{unit($value)}` to `#{$unit}`.";
+}
+
+/// Test if `$value` is an angle
+/// @param {*} $value - Value to test
+/// @return {Bool}
+@function is-direction($value) {
+    $is-direction: index((to top, to top right, to right top, to right, to bottom right, to right bottom, to bottom, to bottom left, to left bottom, to left, to left top, to top left), $value);
+    $is-angle: type-of($value) == 'number' and index('deg' 'grad' 'turn' 'rad', unit($value));
+
+    @return $is-direction or $is-angle;
+}
+
+/// Convert a direction to legacy syntax
+/// @param {Keyword | Angle} $value - Value to convert
+/// @require {function} is-direction
+/// @require {function} convert-angle
+@function legacy-direction($value) {
+    @if is-direction($value) == false {
+        @warn "Cannot convert `#{$value}` to legacy syntax because it doesn't seem to be an angle or a direction";
+    }
+
+    $conversion-map: ( to top : bottom, to top right : bottom left, to right top : left bottom, to right : left, to bottom right : top left, to right bottom : left top, to bottom : top, to bottom left : top right, to left bottom : right top, to left : right, to left top : right bottom, to top left : bottom right );
+
+    @if map-has-key($conversion-map, $value) {
+        @return map-get($conversion-map, $value);
+    }
+
+    @return 90deg - convert-angle($value, 'deg');
+}
+
+/// Mixin printing a linear-gradient
+/// as well as a plain color fallback
+/// and the `-webkit-` prefixed declaration
+/// @access public
+/// @param {String | List | Angle} $direction - Linear gradient direction
+/// @param {Arglist} $color-stops - List of color-stops composing the gradient
+@mixin linear-gradient($direction, $color-stops...) {
+    @if is-direction($direction) == false {
+        $color-stops: ($direction, $color-stops);
+        $direction: 180deg;
+    }
+
+    background: nth(nth($color-stops, 1), 1);
+    background: -webkit-linear-gradient(legacy-direction($direction), $color-stops);
+    background: linear-gradient($direction, $color-stops);
+}
+
+/// FONT FAMILY
+/// Examples:
+/// @include font($font-regular);
+/// @include font($font-regular, bold);
+@mixin font($name, $weight: normal) {
+    font-family: $name;
+    font-weight: $weight;
+}
+
+
+/// https://medium.com/afosto/bootstrap-v4-explained-display-utilities-the-new-hiding-and-showing-306ef6aef49e
+/// Bootstrap breakpoint mixin
+/// Needs:
+/// - functions/breakpoint-min
+/// - functions/breakpoint-infix
+/// Media of at least the minimum breakpoint width. No query for the smallest breakpoint.
+/// Makes the @content apply to the given breakpoint and wider.
+@mixin media-breakpoint-up($name, $breakpoints: $grid-breakpoints) {
+    $min: breakpoint-min($name, $breakpoints);
+
+    @if $min {
+        @media (min-width: $min) {
+            @content;
+        }
+    }
+    @else {
+        @content;
+    }
+}

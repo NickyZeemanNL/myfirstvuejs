@@ -1,0 +1,87 @@
+﻿$offset: 187;
+$duration: 1.4s;
+
+.spinner {
+    animation: rotator $duration linear infinite;
+}
+
+.preloader-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    z-index: 9999;
+
+    &__fixed {
+        position: fixed;
+
+        .spinner {
+            top: 30%;
+        }
+    }
+
+    &.active {
+        display: block !important;
+    }
+
+    .spinner {
+        position: fixed;
+    }
+}
+
+@keyframes rotator {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(270deg);
+    }
+}
+
+.path {
+    stroke-dasharray: $offset;
+    stroke-dashoffset: 0;
+    transform-origin: center;
+    animation: dash $duration ease-in-out infinite, colors ($duration*4) ease-in-out infinite;
+}
+
+@keyframes colors {
+    0% {
+        stroke: $brand-primary;
+    }
+
+    25% {
+        stroke: $brand-primary-dark;
+    }
+
+    50% {
+        stroke: $brand-primary;
+    }
+
+    75% {
+        stroke: $brand-primary-dark;
+    }
+
+    100% {
+        stroke: $brand-primary;
+    }
+}
+
+@keyframes dash {
+    0% {
+        stroke-dashoffset: $offset;
+    }
+
+    50% {
+        stroke-dashoffset: $offset/4;
+        transform: rotate(135deg);
+    }
+
+    100% {
+        stroke-dashoffset: $offset;
+        transform: rotate(450deg);
+    }
+}

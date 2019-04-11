@@ -1,0 +1,41 @@
+﻿h1, h2,
+.h1, .h2 {
+    @include font($font-bold);
+}
+
+h3, h4, h5, h6,
+.h3, .h4, .h5, .h6 {
+    @include font($font-semibold);
+}
+
+h1, .h1 {
+    @include fluid-type($breakpoint-xs, $breakpoint-xl, 24px, 36px);
+}
+
+h2, .h2 {
+    @include fluid-type($breakpoint-xs, $breakpoint-xl, 22px, 28px);
+}
+
+h3, .h3 {
+    @include fluid-type($breakpoint-xs, $breakpoint-xl, 20px, 24px);
+}
+
+h4, .h4 {
+    @include fluid-type($breakpoint-xs, $breakpoint-xl, 16px, 18px);
+}
+
+h5, .h5 {
+    @include fluid-type($breakpoint-xs, $breakpoint-xl, 16px, 16px);
+}
+
+h6, .h6 {
+    @include fluid-type($breakpoint-xs, $breakpoint-xl, 14px, 14px);
+}
+
+em, .em {
+    @include font($font-italic);
+}
+
+strong, .strong {
+    @include font($font-semibold);
+}

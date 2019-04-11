@@ -1,0 +1,44 @@
+﻿.play-button {
+    @include centre();
+
+    .play-button__icon {
+        width: 60px;
+        height: 45px;
+        margin: 0 auto;
+        padding: 0;
+        background-color: rgba($black,0.8);
+        color: $white;
+        border-radius: 50% / 10%;
+        @include font-size(22);
+        position: relative;
+        text-align: center;
+        transition: all 150ms ease-out;
+
+        &:hover {
+            background-color: $brand-primary;
+        }
+
+        &:before {
+            content: "";
+            position: absolute;
+            top: 9%;
+            right: -5%;
+            bottom: 9%;
+            left: -5%;
+            background: inherit;
+            border-radius: 5% / 50%;
+        }
+
+        &:after {
+            content: "";
+            width: 0;
+            height: 0;
+            position: absolute;
+            top: 50%;
+            border-style: solid;
+            border-width: 0.5em 0 0.5em 0.8em;
+            border-color: transparent transparent transparent rgba(255, 255, 255, 0.75);
+            margin: -0.55em 0 0 -0.3em;
+        }
+    }
+}

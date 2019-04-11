@@ -1,0 +1,16 @@
+﻿// -----------------------------------------------------------------------------
+// This file contains very basic styles.
+// -----------------------------------------------------------------------------
+html {}
+
+body {
+    @include font($font-regular);
+    @include font-size($font-size-small);
+    background-color: $grey-light;
+    color: $copy-color;
+
+    &.hide-overflow {
+        height: 100%;
+        overflow: hidden;
+    }
+}

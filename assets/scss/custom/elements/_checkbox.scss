@@ -1,0 +1,120 @@
+﻿.cbx {
+    margin: auto;
+    user-select: none;
+    cursor: pointer;
+
+    span {
+        display: inline-block;
+        vertical-align: middle;
+        transform: translate3d(0, 0, 0);
+
+        &:first-child {
+            position: relative;
+            width: 25px;
+            height: 25px;
+            border-radius: 3px;
+            transform: scale(1);
+            vertical-align: middle;
+            border: 1px solid;
+            border-color: $brand-primary;
+            transition: all 0.2s ease;
+
+            svg {
+                width: 14px;
+                height: 12px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                fill: none;
+                stroke: #FFFFFF;
+                stroke-width: 2;
+                stroke-linecap: round;
+                stroke-linejoin: round;
+                stroke-dasharray: 16px;
+                stroke-dashoffset: 16px;
+                transition: all 0.3s ease;
+                transition-delay: 0.1s;
+                transform: translate(-50%, -50%) translate3d(0, 0, 0);
+            }
+
+            &:before {
+                content: "";
+                width: 100%;
+                height: 100%;
+                background: $brand-primary;
+                display: block;
+                transform: scale(0);
+                opacity: 1;
+                border-radius: 50%;
+            }
+        }
+
+        &:last-child {
+            padding-left: 8px;
+        }
+    }
+
+    @media (min-width: $breakpoint-md) {
+        span {
+            &:first-child {
+                width: 18px;
+                height: 18px;
+
+                svg {
+                    width: 12px;
+                    height: 10px;
+                    top: 3px;
+                    left: 2px;
+                    transform: translate3d(0, 0, 0);
+                }
+            }
+        }
+    }
+}
+
+.inp-cbx {
+    &:checked {
+        + .cbx {
+            span {
+                &:first-child {
+                    background: $brand-primary;
+                    border: 1px solid;
+                    border-color: $brand-primary;
+                    animation: wave 0.4s ease;
+
+                    svg {
+                        stroke-dashoffset: 0;
+                    }
+
+                    &:before {
+                        transform: scale(2.5);
+                        opacity: 0;
+                        visibility: hidden;
+                        pointer-events: none;
+                        transition: all 0.6s ease;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes wave {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,26 @@
+﻿.imagecard,
+.iconcard,
+.videocard {
+
+    @media (min-width: $breakpoint-md) {
+        height: 100%;
+        margin-bottom: 0;
+    }
+}
+
+.card {
+    .card-body {
+        &__title {
+            margin-bottom: 1rem;
+        }
+
+        &__copy {
+            margin-bottom: 1rem;
+        }
+
+        &__footer {
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+    }
+}

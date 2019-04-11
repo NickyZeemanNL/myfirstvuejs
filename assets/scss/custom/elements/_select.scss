@@ -1,0 +1,124 @@
+﻿.arl-select {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    border: 1px solid $grey-medium;
+    cursor: pointer;
+    z-index: 10;
+    // Icons
+    &:before, &:after {
+        height: 100%;
+        font-family: $font-awesome;
+        font-weight: 900;
+        @include font-size($font-size-small);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        text-align: center;
+        z-index: 0;
+        pointer-events: none;
+    }
+
+    &:before {
+        top: 0;
+        left: 0;
+        width: 35px;
+        color: $brand-primary;
+    }
+
+    &--i-filter {
+        &:before {
+            content: "\f160";
+        }
+    }
+
+    &--i-clock {
+        &:before {
+            content: "\f017";
+        }
+    }
+
+    &--i-car {
+        &:before {
+            content: "\f1b9";
+        }
+    }
+
+    &--i-euro {
+        &:before {
+            content: "\f153";
+        }
+    }
+
+    &:after {
+        content: "\f078";
+        right: 0;
+        top: 0;
+        color: $grey-dark;
+        border-left: 1px solid $grey-medium;
+        width: 30px; // default width
+    }
+
+    select {
+        display: block;
+        width: 100%;
+        padding: 10px 33px 10px 30px;
+        border: none;
+        outline: none;
+        background: transparent;
+        appearance: none;
+        border-radius: 0;
+        margin: 0;
+        @include font-size($font-size-small);
+        cursor: pointer;
+        color: $grey-dark;
+    }
+
+    &--small {
+        select {
+            padding: 5px 33px 5px 30px;
+        }
+
+        &:after {
+            width: 30px;
+        }
+    }
+
+    &--reg {
+        select {
+            padding: 10px 33px 10px 30px;
+        }
+
+        &:after {
+            width: 30px;
+        }
+    }
+
+    @media (min-width: $breakpoint-md) {
+
+        &:after {
+            width: 50px; // default width
+        }
+
+        &--small {
+            select {
+                padding: 5px 55px 5px 35px;
+            }
+
+            &:after {
+                width: 40px;
+            }
+        }
+
+        &--reg {
+            select {
+                padding: 10px 55px 10px 35px;
+            }
+
+            &:after {
+                width: 50px;
+            }
+        }
+    }
+}

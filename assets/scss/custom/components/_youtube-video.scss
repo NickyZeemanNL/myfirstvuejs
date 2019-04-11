@@ -1,0 +1,17 @@
+﻿.youtube-video-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 30px;
+
+    a {
+        img {
+            width: 100%;
+        }
+    }
+
+    iframe {
+        display: none;
+        width: 100%;
+        //height: 200px;
+    }
+}

@@ -1,0 +1,13 @@
+﻿.tooltip {
+    @include font-size($font-size-small);
+
+    .arrow{
+        &:before{
+            border-bottom-color: $brand-primary;
+        }
+    }
+
+    &-inner {
+        background-color: $brand-primary;
+    }
+}

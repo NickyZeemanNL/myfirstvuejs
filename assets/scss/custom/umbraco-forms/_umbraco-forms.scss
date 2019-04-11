@@ -1,0 +1,80 @@
+﻿.umbraco-forms-page {
+    .row-fluid,
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: -15px;
+        margin-left: -15px;
+    }
+
+    .umbraco-forms-fieldset{
+        padding: 0;
+    }
+}
+
+.umbraco-forms-container {
+    span.field-validation-error {
+        color: $brand-red;
+    }
+
+    input.input-validation-error, 
+    select.input-validation-error {
+        border-color: $brand-red;
+    }
+}
+
+.umbraco-forms-field {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    .umbraco-forms-label {
+        @include font-size(14px);
+    }
+
+    .umbraco-forms-field-wrapper {
+        .help-block {
+            margin-top: 5px;
+            @include font($font-italic);
+        }
+    }
+
+    input, select, textarea, .form-control,
+    &.text {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        @include line-height(26px);
+        padding: 5px 10px;
+        margin: 0;
+        background: #eee;
+        border: 1px solid rgba($black, 0.1);
+    }
+    // Boostrap custom form-controls overwrites
+    // https://getbootstrap.com/docs/4.3/components/forms/#custom-forms
+    .custom-control {
+        min-height: 2.5rem;
+        padding-left: 2.5rem;
+    }
+
+    .custom-control-label {
+        cursor: pointer;
+
+        &:before, &:after {
+            width: 1.5rem; 
+            height: 1.5rem;
+            left: -2.5rem;
+        }
+
+        &:before {
+            background-color: #eee;
+            border: 1px solid rgba($black, 0.1);
+        }
+    }
+    // Custom radio buttons & checkbox
+    .custom-radio .custom-control-input:checked ~ .custom-control-label::before,
+    .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+        background-color: $brand-primary;
+        border-color: $brand-primary;
+    }
+} 

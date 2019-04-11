@@ -1,0 +1,85 @@
+﻿/// FONT COLORS
+
+/// Generic
+.color-white{
+    color: $white !important;
+}
+.color-black {
+    color: $black !important;
+}
+.color-copy {
+    color: $copy-color !important;
+}
+
+/// Theme
+.color-theme-primary {
+    color: $brand-primary !important;
+}
+.color-theme-secondary {
+    color: $brand-secondary !important;
+}
+
+/// Socials
+.color-twitter {
+    color: $color-twitter !important;
+}
+.color-facebook {
+    color: $color-facebook !important;
+}
+
+/// Background color
+@each $breakpoint in map-keys($grid-breakpoints) {
+    @include media-breakpoint-up($breakpoint) {
+        $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+        .bg#{$infix}-none {
+            background-color: none !important;
+            color: $copy-color !important;
+        }
+
+        .bg#{$infix}-white {
+            background-color: $white !important;
+            color: $copy-color !important;
+        }
+
+        .bg#{$infix}-theme-primary {
+            background-color: $brand-primary !important;
+            color: $white !important;
+        }
+
+        .bg#{$infix}-theme-primary-dark {
+            background-color: $brand-primary-dark !important;
+            color: $white !important;
+        }
+
+        .bg#{$infix}-theme-secondary {
+            background-color: $brand-secondary !important;
+            color: $white !important;
+        }
+
+        .bg#{$infix}-theme-secondary-dark {
+            background-color: $brand-secondary-dark !important;
+            color: $white !important;
+        }
+
+        .bg#{$infix}-grey-light {
+            background-color: $grey-light !important;
+            color: $copy-color !important;
+        }
+
+        .bg#{$infix}-grey-medium {
+            background-color: $grey-medium !important;
+            color: $copy-color !important;
+        }
+
+        .bg#{$infix}-grey-dark {
+            background-color: $grey-dark !important;
+            color: $white !important;
+        }
+
+        .bg#{$infix}-grey-extra-dark {
+            background-color: $grey-extra-dark !important;
+            color: $white !important;
+        }
+    }
+}

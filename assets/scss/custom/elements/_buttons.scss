@@ -1,0 +1,144 @@
+﻿.btn {
+    @include font($font-semibold);
+    @include font-size($font-size-small);
+    @include line-height(28px);
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 4px;
+    border-top: 1px solid rgba($white, 0.1);
+    border-bottom: 3px solid rgba($black, 0.2);
+    box-shadow: 0 2px 5px 0 rgba($black, 0.26);
+    transition: box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), background-color 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+    &:active {
+        box-shadow: 0 4px 8px 0 rgba($black, 0.4);
+    }
+
+    &[disabled] {
+        box-shadow: 0;
+        background-color: $disabled;
+        color: darken($disabled, 50%);
+        border-bottom: 3px solid rgba($black, 0.3);
+
+        &:hover, &:focus, &:active {
+            box-shadow: 0;
+            background-color: $disabled;
+            color: darken($disabled, 50%);
+        }
+    }
+
+    &__text {
+        @include font($font-regular);
+        background-color: transparent;
+        border: 0;
+        text-align: left;
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+        text-transform: none;
+
+        &:active, &:focus {
+            box-shadow: none;
+        }
+
+        &--primary {
+            color: $brand-primary;
+            transition: color .2s ease;
+
+            &:hover {
+                color: darken($brand-primary, 10%);
+            }
+        }
+
+        &--secondary {
+            color: $brand-secondary;
+            transition: color .2s ease;
+
+            &:hover {
+                color: darken($brand-secondary, 10%);
+            }
+        }
+    }
+
+    &__unstyled {
+        @include font($font-regular);
+        background-color: transparent;
+        border: 0;
+        text-align: left;
+        margin: 0;
+        padding: 0;
+        line-height: 0;
+        box-shadow: none;
+        text-transform: none;
+        color: $copy-color;
+
+        &:active, &:focus {
+            box-shadow: none;
+        }
+    }
+
+    &__primary {
+        background-color: $brand-primary;
+        color: $white;
+
+        &:hover,
+        &:active {
+            background-color: darken($brand-primary, 10%);
+            color: $white;
+        }
+    }
+
+    &__secondary {
+        background-color: $brand-secondary;
+        color: $white;
+
+        &:hover,
+        &:active {
+            background-color: darken($brand-secondary, 10%);
+            color: $white;
+        }
+    }
+
+    &__brand-orange {
+        background-color: $brand-orange;
+        color: $white;
+
+        &:hover,
+        &:active {
+            background-color: darken($brand-orange, 10%);
+            color: $white;
+        }
+    }
+
+    &__brand-red {
+        background-color: $brand-red;
+        color: $white;
+
+        &:hover,
+        &:active {
+            background-color: darken($brand-red, 10%);
+            color: $white;
+        }
+    }
+
+    &__paging {
+        @include font($font-regular);
+        background-color: transparent;
+        border: 0;
+        text-align: left;
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+        text-transform: none;
+        transition: all .2s ease;
+
+        &:hover, &:focus, &:active, &[disabled], &[disabled]:hover {
+            box-shadow: none;
+            background-color: transparent;
+            border: 0;
+        }
+    }
+}

@@ -1,0 +1,52 @@
+﻿/// --------------------------------------------------------------------------------------------------------
+/// This file contains the project specific variables. This is an extension to the basesource variables
+/// --------------------------------------------------------------------------------------------------------
+// Asset helpers
+$custom-base-path: '../../../' !default;
+$custom-font-path: $custom-base-path + 'fonts' + '/' !default;
+
+/// Grid breakpoints
+/// You can extend the default breakpoints here.
+/// Checkout the default breakpoints in the basesource/helpers/_arl.variables.scss first
+/// -------------------------
+
+
+/// Fonts
+/// You can extend the default fonts here.
+/// -------------------------
+// Fonts
+$font-regular: "OpenSans-Regular", Roboto, 'Helvetica Neue', sans-serif;
+$font-semibold: "OpenSans-SemiBold", Roboto, 'Helvetica Neue', sans-serif;
+$font-bold: "OpenSans-Bold", Roboto, 'Helvetica Neue', sans-serif;
+$font-italic: "OpenSans-Italic", Roboto, 'Helvetica Neue', sans-serif;
+
+/// Font sizing
+/// Use this in combination with:
+/// @include font-size($font-size-reg)
+$font-size-tiny: 12px;
+$font-size-small: 14px;
+$font-size-regular: 16px;
+$font-size-medium: 18px;
+$font-awesome: "Font Awesome 5 Free";
+
+/// Colors
+/// You can extend the default colors here.
+$brand-primary: #008066;
+$brand-primary-dark: #00765e;
+
+$brand-secondary: #ffa522;
+$brand-secondary-dark: #ee8d00;
+
+// Primary copy color
+$copy-color: #333333;
+
+//Extra colors
+$brand-red: #a92232;
+$brand-orange: #ff5722;
+
+$grey-light: #f3f3f3;
+$grey-medium: #e9e9e9;
+$grey-dark: #4a4a4a;
+$grey-extra-dark: #3d3d3d;
+
+$disabled: #e1e1e1;

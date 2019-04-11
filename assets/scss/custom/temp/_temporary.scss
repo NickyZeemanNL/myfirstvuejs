@@ -1,0 +1,121 @@
+﻿div.table {
+    color: $copy-color;
+}
+
+.header-brand-secondary {
+    color: $brand-secondary;
+}
+
+.review-date {
+    padding-left: 15px;
+}
+
+.umbraco-forms-page {
+    input[type=radio] {
+        width: auto;
+        margin-right: 15px;
+    }
+
+    input[type=submit] {
+        width: auto;
+        background-color: $brand-primary;
+        color: $white;
+
+        &:hover,
+        &:active {
+            background-color: darken($brand-primary, 10%);
+            color: $white;
+        }
+    }
+
+    select,
+    input,
+    textarea {
+        width: 100%;
+    }
+
+    .umbraco-forms-field {
+        margin: 15px 0;
+    }
+
+    textarea {
+        min-height: 100px;
+    }
+
+    label {
+        max-width: 100%;
+    }
+
+    .radiobuttonlist {
+        height: auto;
+        border: none;
+    }
+}
+
+.review-averagescore-table {
+    width: 100%;
+
+    tr {
+        border-bottom: 2px solid $white;
+
+        td {
+            padding: 5px 15px;
+
+            &:first-child {
+                border-right: 2px solid $white;
+            }
+        }
+    }
+}
+
+.review-score-table {
+    width: 100%;
+
+    tr {
+        border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        td {
+            padding: 5px 15px;
+
+            &:first-child {
+                border-right: 2px solid rgba(0, 0, 0, 0.1);
+            }
+        }
+    }
+
+    strong.score {
+        @include font($font-bold);
+        color: $brand-secondary;
+    }
+}
+
+.overview-car-body {
+    background-image: url(/media/1001/ds-7-crossback-diesel-automaat-grijs-746-supershortlease-1-1200x900.jpg);
+    color: white;
+    min-height: 200px;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.action-ribbon {
+    position: absolute;
+    bottom: 0;
+}
+
+/*.is-iconcard {
+    height: 82px;
+    width: 82px;
+    margin: 30px auto 15px;
+}*/
+
+
+/*.button-holder {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem
+}*/

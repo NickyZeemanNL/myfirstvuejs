@@ -1,0 +1,11 @@
+﻿.tabs{
+    .nav-tabs{
+        .nav-link{
+            @include font($font-semibold);
+        }
+    }
+
+    .tab-content{
+        padding: 15px 0;
+    }
+}

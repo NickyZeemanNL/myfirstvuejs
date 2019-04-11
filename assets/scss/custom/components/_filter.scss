@@ -1,0 +1,39 @@
+﻿.filters {
+    position: sticky;
+    top: 70px;
+
+    &__list {
+        .list-item {
+            border-bottom: 3px solid #eee;
+
+            .btn {
+                width: 100%;
+                padding: 6px 0;
+                @include font($font-semibold);
+                @include line-height(40px);
+                color: $copy-color;
+                text-transform: none;
+                justify-content: space-between;
+                transition: color .2s ease;
+
+                i {
+                    transform: rotate(0);
+                    transition: transform .2s ease;
+                }
+
+                &.is-active {
+                    i {
+                        transform: rotate(90deg);
+                    }
+                }
+            }
+        }
+
+        .sub-list {
+
+            &__block {
+                padding: 15px 5px;
+            }
+        }
+    }
+}

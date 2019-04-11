@@ -1,0 +1,82 @@
+﻿.slider {
+    &__slide {
+        margin-bottom: 15px;
+    }
+
+    &__inputs {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        input {
+            flex: 0 0 25%;
+            max-width: 100%;
+            padding: 5px;
+            border-radius: 4px;
+        }
+
+        .input-group {
+            max-width: 45%;
+
+            .input-group-text {
+                @include font($font-semibold);
+                background-color: $grey-medium;
+                font-size: 12px;
+            }
+        }
+        //Temp to see values
+        .values {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+    }
+}
+
+// Slider handles
+.noUi-target {
+    padding: 0 17px 0 0;
+}
+
+.noUi-base {
+
+    &:before,
+    &:after {
+        width: 17px;
+        content: "";
+        position: absolute;
+        top: 0;
+        height: 100%;
+        display: block;
+    }
+
+
+    &:before {
+        left: -17px;
+    }
+
+    &:after {
+        left: 100%;
+    }
+
+    .noUi-connect {
+        background-color: $brand-primary;
+    }
+}
+
+.noUi-horizontal {
+    height: 6px;
+
+    .noUi-handle {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        top: calc(50% + 2px);
+        transform: translateY(-50%);
+        cursor: grab;
+
+        &:before,
+        &:after {
+            display: none;
+        }
+    }
+}

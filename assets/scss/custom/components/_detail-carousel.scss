@@ -1,0 +1,108 @@
+﻿// Global swiper styling
+.swiper-container {
+    width: 100%;
+    transition: opacity .6s ease, transform .3s ease;
+
+    &.is-loading {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .swiper-slide {
+        overflow: hidden;
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+    }
+
+    .slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-position: center;
+        background-size: cover;
+    }
+}
+
+
+// Main slider
+.main-slider {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 30px;
+
+    .slide{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+// Navigation slider
+.nav-slider {
+    width: 100%;
+    height: 100px;
+    margin-top: 15px;
+    padding-left: 5px;
+
+    .swiper-slide {
+        cursor: pointer;
+        opacity: .4;
+        transition: opacity .3s ease;
+
+        &.swiper-slide-active {
+            opacity: 1;
+        }
+    }
+}
+
+
+
+// Controls
+.swiper-navigation {
+    width: 44px;
+
+    &:not(.is-visible) {
+        opacity: 0;
+        visibility: hidden;
+        transition: all .3s ease;
+
+
+        &.swiper-button-prev {
+            transform: translateX(50px);
+        }
+
+        &.swiper-button-next {
+            transform: translateX(-50px);
+        }
+    }
+
+    &.is-visible {
+        opacity: 1;
+        visibility: visible;
+
+        &.swiper-button-prev,
+        &.swiper-button-next {
+            height: 100%;
+            top: 0;
+            margin-top: 0;
+            background-color: $grey-medium;
+        }
+
+        &.swiper-button-prev {
+            left: 0;
+        }
+
+        &.swiper-button-next {
+            right: 0;
+        }
+    }
+}
+
+.swiper-container:hover .swiper-button-prev,
+.swiper-container:hover .swiper-button-next {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+}

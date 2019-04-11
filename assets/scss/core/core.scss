@@ -1,0 +1,10 @@
+﻿@charset 'utf-8';
+
+@import "../../vendors/core/bootstrap/css/bootstrap";
+@import "helpers/arl.variables";
+@import "helpers/arl.functions";
+@import "helpers/arl.mixins";
+@import "helpers/arl.aspect-ratios";
+@import "general/arl.base";
+
+@import "../../vendors/core/blazy/scss/blazy"; 

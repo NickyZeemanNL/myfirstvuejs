@@ -1,0 +1,71 @@
+﻿// Grid breakpoints
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+// Credit: Nicolas Gallagher and SUIT CSS.
+// This is Bootstrap 4 default and is included in Bootstrap core
+//.embed-responsive {
+//    position: relative;
+//    display: block;
+//    width: 100%;
+//    padding: 0;
+//    overflow: hidden;
+
+//    &::before {
+//        display: block;
+//        content: "";
+//    }
+
+//    .embed-responsive-item,
+//    iframe,
+//    embed,
+//    object,
+//    video {
+//        position: absolute;
+//        top: 0;
+//        bottom: 0;
+//        left: 0;
+//        width: 100%;
+//        height: 100%;
+//        border: 0;
+//    }
+//}
+
+
+// Helper to have different aspect ratio's on different breakpoints
+@each $breakpoint in map-keys($grid-breakpoints) {
+    @include media-breakpoint-up($breakpoint) {
+        $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+        .embed-responsive#{$infix}-21by9 {
+            &:before {
+                padding-top: percentage(9 / 21);
+            }
+        }
+
+        .embed-responsive#{$infix}-16by9 {
+            &::before {
+                padding-top: percentage(9 / 16); 
+            }
+        }
+
+        .embed-responsive#{$infix}-4by3 { 
+            &::before { 
+                padding-top: percentage(3 / 4);
+            }
+        }
+
+        .embed-responsive#{$infix}-1by1 {
+            &::before {
+                padding-top: percentage(1 / 1); 
+            } 
+        }
+
+        .embed-responsive#{$infix}-3by2 {
+            &::before {
+                padding-top: percentage(2 / 3);
+            }
+        } 
+    }
+}

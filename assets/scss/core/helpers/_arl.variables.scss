@@ -1,0 +1,44 @@
+﻿// Asset helpers
+$asset-base-path: '../../' !default;
+$base-font-path: $asset-base-path + 'fonts' + '/' !default;
+
+// Grid breakpoints
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+// These are Bootstrap breakpoints
+// Bootstrap grid map used for functions
+$grid-breakpoints: ( xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px );
+
+$breakpoint-fluidtype-min: 320px;
+$breakpoint-xs: 0px;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+
+// Colors
+$white: #fff;
+$black: #000; 
+
+/// z-index
+//
+// These are Bootstrap z-indexes
+$zindex-dropdown: 1000 !default;
+$zindex-sticky: 1020 !default;
+$zindex-fixed: 1030 !default;
+$zindex-modal-backdrop: 1040 !default;
+$zindex-modal: 1050 !default;
+$zindex-popover: 1060 !default;
+$zindex-tooltip: 1070 !default;
+
+// Social media colors
+$color-facebook: #3c5a99;
+$color-twitter: #1da1f2;
+$color-instagram: radial-gradient(circle at 33% 100%, #FED373 4%, #F15245 30%, #D92E7F 62%, #9B36B7 85%, #515ECF);
+$color-whatsapp: #25d366;
+$color-google: #c23321;
+$color-email: #777;
+$color-linkedin: #0077b5;
+$color-pinterest: #bd081c;

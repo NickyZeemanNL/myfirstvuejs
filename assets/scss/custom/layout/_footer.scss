@@ -1,0 +1,152 @@
+﻿.main-footer {
+    color: rgba(255,255,255,.8);
+
+    .footer-top {
+        background-color: $grey-extra-dark;
+
+        h3 {
+            @include font-size(20);
+            color: $brand-secondary;
+        }
+
+        hr {
+            border-top: 1px rgba(255, 255, 255, 0.4) dashed;
+            padding: 1.5rem 0 0;
+            margin: 2rem 0 0;
+        }
+
+        .input-group {
+            .input-group-text {
+                border: none;
+                padding: .375rem 1.2rem;
+
+                .fas {
+                    @include font-size(14);
+                }
+            }
+
+            .form-control {
+                border: none;
+                height: calc(2.25rem + 15px);
+            }
+        }
+
+        ul {
+            margin-top: 24px;
+
+            li {
+                &:not(:last-child) {
+                    margin-bottom: 5px;
+                }
+            }
+        }
+
+        a {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        strong {
+            @include font($font-semibold);
+            color: $brand-secondary;
+        }
+
+        .share-title {
+            margin-top: 2rem;
+        }
+
+        .to-reviews {
+            margin-top: 24px;
+            display: block;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        .stars {
+            margin-top: -11px;
+            position: relative;
+            vertical-align: middle;
+            display: inline-block;
+            color: #eee;
+            overflow: hidden;
+
+            .empty:before, .full:before {
+                content: "\2605\2605\2605\2605\2605";
+                @include font-size(14);
+            }
+
+            .full {
+                position: absolute;
+                left: 0;
+                top: 0;
+                white-space: nowrap;
+                overflow: hidden;
+                color: $brand-secondary;
+            }
+        }
+
+        .average {
+            padding-left: 5px;
+            @include font-size(30);
+            color: $brand-secondary;
+        }
+
+        .total {
+            color: $brand-secondary;
+        }
+    }
+
+    .footer-bottom {
+        background-color: $brand-primary;
+
+        a {
+            @include font($font-semibold);
+            color: $white;
+        }
+
+        p {
+            color: rgba(255, 255, 255, .87);
+
+            a {
+                color: rgba(255, 255, 255, .87);
+                font-weight: normal;
+            }
+        }
+    }
+}
+// Small devices (landscape phones, 576px and up)
+@media (min-width: $breakpoint-sm) {
+    .lines {
+        .col-12:nth-child(even):before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            border-left: 1px dashed rgba(255, 255, 255, 0.4);
+            width: 1px;
+        }
+    }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: $breakpoint-md) {
+    .lines {
+        .col-12:not(:first-child):before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            border-left: 1px dashed rgba(255, 255, 255, 0.4);
+            width: 1px;
+        }
+    }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: $breakpoint-lg) {
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: $breakpoint-xl) {
+}

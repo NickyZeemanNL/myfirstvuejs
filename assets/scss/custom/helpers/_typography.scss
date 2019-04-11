@@ -1,0 +1,6 @@
+﻿@each $font-face in OpenSans-Bold, OpenSans-SemiBold, OpenSans-Regular, OpenSans-Italic {
+    @font-face {
+        font-family: $font-face;
+        src: url('#{$custom-font-path}opensans/#{$font-face}.woff2') format('woff2'), url('#{$custom-font-path}opensans/#{$font-face}.woff') format('woff');
+    }
+}

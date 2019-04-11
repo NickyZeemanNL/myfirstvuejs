@@ -1,0 +1,127 @@
+﻿.results {
+    .results-container {
+        position: relative;
+    }
+
+    &__header {
+        z-index: $zindex-sticky;
+        padding: 15px 0;
+        position: relative;
+        transition: all .4s ease;
+        top: 0;
+        position: -webkit-sticky;
+        position: sticky;
+        backface-visibility: visible;
+        transform: translate3d(0px, 0px, 0px);
+        transition: all .3s ease;
+
+        &:before {
+            content: '';
+            width: calc(100% + 30px);
+            height: 100%;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: -15px;
+            background-color: rgba($grey-medium, 1);
+        }
+
+        &.is-sticky {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 64px;
+        }
+    }
+
+    @media (min-width: $breakpoint-md) {
+        &__header {
+            top: 0;
+            margin-bottom: 30px;
+
+            &:before {
+                width: calc(100% + 30px);
+            }
+
+            &.is-sticky {
+            }
+        }
+    }
+
+    @media (min-width: $breakpoint-lg) {
+        &__header {
+            &:before {
+                display: none;
+            }
+
+
+            &.is-sticky {
+                position: relative;
+                width: auto;
+                top: 0;
+            }
+        }
+    }
+}
+
+
+.filter-holder {
+
+    .filter-aside {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        z-index: 1030;
+        box-shadow: 10px 0 37px rgba(0, 0, 0, 0);
+        overflow-y: auto;
+        transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+        left: -100vw;
+        width: 100vw;
+        background-color: $white;
+
+
+        &.is-open {
+            left: 0;
+        }
+
+        &__header {
+            min-height: 69px;
+            padding: 25px 15px;
+            background-color: $grey-extra-dark;
+        }
+
+        &__filters {
+            padding: 0 15px;
+
+            .filters {
+                position: relative;
+                top: 0;
+            }
+        }
+    }
+
+
+    &.is-open {
+        .filter-aside {
+            left: 0;
+        }
+    }
+
+    @media (min-width: $breakpoint-lg) {
+        position: sticky;
+        top: 70px;
+        left: 0;
+
+        .filter-aside {
+            width: auto;
+            height: auto;
+            position: relative;
+            left: 0;
+
+            &__filters {
+                padding: 0;
+            }
+        }
+    }
+}

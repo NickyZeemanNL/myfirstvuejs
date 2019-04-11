@@ -1,0 +1,55 @@
+﻿.imagecard,
+.iconcard,
+.videocard,
+.employeecard {
+    margin-bottom: 30px;
+
+    @media (min-width: $breakpoint-md) {
+    }
+}
+
+.card {
+    border: 0;
+    border-radius: 0;
+    background-color: transparent;
+
+    .card-header {
+        &__icon {
+            width: 82px;
+            height: 82px;
+            margin: 30px auto 0;
+        }
+
+        &__image {
+        }
+
+        &__video {
+        }
+    }
+
+    .card-body {
+        display: flex;
+        flex-direction: column;
+
+        &__title {
+            .contact__job-title {
+                min-height: 40px;
+            }
+        }
+
+        &__copy {
+        }
+
+        &__footer {
+            margin-top: auto;
+
+            a.contact__icon {
+                padding: 0 15px;
+            }
+        }
+    }
+
+    @media (min-width: $breakpoint-md) {
+        height: 100%;
+    }
+}

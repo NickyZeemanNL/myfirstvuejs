@@ -1,5 +1,4 @@
-﻿/// <binding BeforeBuild='build' Clean='clean' ProjectOpened='build, watch' />
-"use strict";
+﻿"use strict";
 
 var gulp = require("gulp"),
     sass = require("gulp-sass"),

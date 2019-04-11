@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "name": "MyFirstVue",
+  "name": "myfirstvue",
   "private": true,
   "vendorDependencies": {
     "arlanet-cookie-notice": "arlanet",
@@ -17,6 +17,7 @@
     "gulp-autoprefixer": "6.0.0",
     "gulp-babel": "^8.0.0",
     "gulp-clean-css": "3.10.0",
+    "gulp-cli": "^2.1.0",
     "gulp-concat": "^2.6.1",
     "gulp-minify": "^3.1.0",
     "gulp-notify": "3.2.0",
